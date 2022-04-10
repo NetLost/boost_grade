@@ -35,6 +35,21 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
+  # Hooks
+  flutter_hooks: ^0.18.3
+
+  # Words Api
+  english_words: ^4.0.0
+  
+  # Value equality
+  equatable: ^2.0.3
+
+  # Remote Api
+  http: ^0.13.4
+
+  # Bloc
+  flutter_bloc: ^8.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
