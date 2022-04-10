@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../color_list_screen/color_list_screen.dart';
 import 'widgets/custom_button.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -36,7 +37,7 @@ class HomeScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => Container(),
+                  builder: (context) => const ColorListScreen(),
                 ),
               );
             }),
