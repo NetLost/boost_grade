@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../four_squares_screen/four_squares_screen.dart';
 import 'widgets/custom_button.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -27,7 +28,7 @@ class HomeScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => Container(),
+                  builder: (context) => const FourSquaresScreen(),
                 ),
               );
             }),
