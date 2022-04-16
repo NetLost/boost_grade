@@ -1,3 +1,4 @@
+import 'package:boost_grade/presentation/pages/async_request_screen/async_request_screen.dart';
 import 'package:flutter/material.dart';
 import 'widgets/custom_button.dart';
 
@@ -54,7 +55,7 @@ class HomeScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => Container(),
+                  builder: (context) => const AsyncRequestScreen(),
                 ),
               );
             }),
