@@ -33,7 +33,17 @@ class HomeScreen extends StatelessWidget {
           padding: EdgeInsets.only(left: 50),
           child: Text(
             'Главная',
-            style: TextStyle(color: Colors.black, fontSize: 24.0),
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 24.0,
+              shadows: [
+                Shadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.3),
+                  offset: Offset(0, 4),
+                  blurRadius: 10
+                )
+              ]
+            ),
           ),
         ),
       ),
