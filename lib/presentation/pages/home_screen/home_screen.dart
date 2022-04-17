@@ -1,23 +1,24 @@
+import 'package:boost_grade/app_settings/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'components/home_screen_item.dart';
 
 class HomeScreen extends StatelessWidget {
   static final List<_PageButtonPayload> _titles = [
     _PageButtonPayload(
-      '4 квадрата',
-      MaterialPageRoute(builder: (context) => Container()),
+      title: AppStrings.firstItemName,
+      route: MaterialPageRoute(builder: (context) => Container()),
     ),
     _PageButtonPayload(
-      'Цветной список',
-      MaterialPageRoute(builder: (context) => Container()),
+      title: AppStrings.secondtItemName,
+      route: MaterialPageRoute(builder: (context) => Container()),
     ),
     _PageButtonPayload(
-      'Codelab',
-      MaterialPageRoute(builder: (context) => Container()),
+      title: AppStrings.thirdItemName,
+      route: MaterialPageRoute(builder: (context) => Container()),
     ),
     _PageButtonPayload(
-      'Асинхронный запрос',
-      MaterialPageRoute(builder: (context) => Container()),
+      title: AppStrings.fourthItemName,
+      route: MaterialPageRoute(builder: (context) => Container()),
     ),
   ];
 
@@ -32,7 +33,7 @@ class HomeScreen extends StatelessWidget {
         title: const Padding(
           padding: EdgeInsets.only(left: 50),
           child: Text(
-            'Главная',
+            AppStrings.appBarName,
             style: TextStyle(
               color: Colors.black,
               fontSize: 24.0,
@@ -70,5 +71,5 @@ class _PageButtonPayload {
   final String title;
   final MaterialPageRoute route;
 
-  const _PageButtonPayload(this.title, this.route);
+  const _PageButtonPayload({required this.title, required this.route});
 }
