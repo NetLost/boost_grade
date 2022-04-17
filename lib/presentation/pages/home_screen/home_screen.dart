@@ -1,4 +1,5 @@
 import 'package:boost_grade/app_settings/app_strings.dart';
+import 'package:boost_grade/presentation/pages/async_request_screen/async_request_route.dart';
 import 'package:flutter/material.dart';
 import 'components/home_screen_item.dart';
 
@@ -18,7 +19,7 @@ class HomeScreen extends StatelessWidget {
     ),
     _PageButtonPayload(
       title: AppStrings.fourthItemName,
-      route: MaterialPageRoute(builder: (context) => Container()),
+      route: AsyncRequestRoute(),
     ),
   ];
 

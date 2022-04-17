@@ -1,3 +1,4 @@
+import 'package:boost_grade/app_settings/app_strings.dart';
 import 'package:boost_grade/presentation/bloc/photo_list_cubit/photo_list_cubit.dart';
 import 'package:boost_grade/presentation/pages/async_request_screen/components/body.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ class AsyncRequestScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Цветной список'),
+        title: const Text(AppStrings.fourthItemName),
       ),
       floatingActionButton: CustomFloatingActionButton(onTap: () async {
         BlocProvider.of<PhotoListCubit>(context, listen: false).loadPhoto();
