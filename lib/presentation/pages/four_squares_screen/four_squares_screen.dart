@@ -1,5 +1,6 @@
+import 'package:boost_grade/app_settings/app_strings.dart';
+import 'package:boost_grade/utils/app_utils.dart';
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
 import 'package:flutter_hooks/flutter_hooks.dart';
 import '../../widgets/custom_floating_action_button.dart';
 
@@ -10,21 +11,18 @@ class FourSquaresScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final defaultColors = List<Color>.filled(count, Colors.grey);
     final colors = useState<List<Color>>(defaultColors);
     final changeColor = useCallback(
-      () => colors.value = List<Color>.generate(
-          count,
-          (index) => Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
-              .withOpacity(1.0)),
+      () => colors.value =
+          List<Color>.generate(count, (index) => AppUtils.getRandomColor()),
       [colors],
     );
 
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          '4 квадрата',
+          AppStrings.firstItemName,
           style: TextStyle(color: Colors.black, fontSize: 24.0),
         ),
       ),
@@ -38,7 +36,7 @@ class FourSquaresScreen extends HookWidget {
               padding: const EdgeInsets.all(8.0),
               child: Center(
                 child: Container(
-                  decoration: BoxDecoration(color: colors.value[index]),
+                  color: colors.value[index],
                 ),
               ),
             );
