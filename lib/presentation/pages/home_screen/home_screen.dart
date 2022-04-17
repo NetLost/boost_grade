@@ -1,4 +1,5 @@
 import 'package:boost_grade/app_settings/app_strings.dart';
+import 'package:boost_grade/presentation/pages/codelab_screen/codelab_route.dart';
 import 'package:flutter/material.dart';
 import 'components/home_screen_item.dart';
 
@@ -14,7 +15,7 @@ class HomeScreen extends StatelessWidget {
     ),
     _PageButtonPayload(
       title: AppStrings.thirdItemName,
-      route: MaterialPageRoute(builder: (context) => Container()),
+      route: CodelabRoute(),
     ),
     _PageButtonPayload(
       title: AppStrings.fourthItemName,
