@@ -1,7 +1,25 @@
 import 'package:flutter/material.dart';
-import 'widgets/custom_button.dart';
+import 'components/home_screen_item.dart';
 
 class HomeScreen extends StatelessWidget {
+  static final List<_PageButtonPayload> _titles = [
+    _PageButtonPayload(
+      '4 квадрата',
+      MaterialPageRoute(builder: (context) => Container()),
+    ),
+    _PageButtonPayload(
+      'Цветной список',
+      MaterialPageRoute(builder: (context) => Container()),
+    ),
+    _PageButtonPayload(
+      'Codelab',
+      MaterialPageRoute(builder: (context) => Container()),
+    ),
+    _PageButtonPayload(
+      'Асинхронный запрос',
+      MaterialPageRoute(builder: (context) => Container()),
+    ),
+  ];
 
   const HomeScreen({
     Key? key,
@@ -20,47 +38,27 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(25.0),
-        child: Column(
-          children: [
-            customButton('4 квадрата', () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Container(),
-                ),
-              );
-            }),
-            const SizedBox(height: 20.0,),
-            customButton('Цветной список', () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Container(),
-                ),
-              );
-            }),
-            const SizedBox(height: 20.0,),
-            customButton('Codelab', () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Container(),
-                ),
-              );
-            }),
-            const SizedBox(height: 20.0,),
-            customButton('Асинхронный запрос', () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Container(),
-                ),
-              );
-            }),
-          ],
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 22.0),
+        child: ListView.separated(
+          itemCount: _titles.length,
+          separatorBuilder: (context, index) {
+            return const SizedBox(
+              height: 16.0,
+            );
+          },
+          itemBuilder: (context, index) => HomeScreenItem(
+            name: _titles[index].title,
+            onTap: () => Navigator.push(context, _titles[index].route),
+          ),
         ),
       ),
     );
   }
+}
+
+class _PageButtonPayload {
+  final String title;
+  final MaterialPageRoute route;
+
+  const _PageButtonPayload(this.title, this.route);
 }
