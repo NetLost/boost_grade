@@ -1,13 +1,15 @@
 import 'package:boost_grade/app_settings/app_strings.dart';
 import 'package:boost_grade/presentation/pages/codelab_screen/codelab_route.dart';
+import 'package:boost_grade/presentation/pages/async_request_screen/async_request_route.dart';
 import 'package:flutter/material.dart';
+import '../four_squares_screen/four_squares_route.dart';
 import 'components/home_screen_item.dart';
 
 class HomeScreen extends StatelessWidget {
   static final List<_PageButtonPayload> _titles = [
     _PageButtonPayload(
       title: AppStrings.firstItemName,
-      route: MaterialPageRoute(builder: (context) => Container()),
+      route: FourSquaresRoute(),
     ),
     _PageButtonPayload(
       title: AppStrings.secondtItemName,
@@ -19,7 +21,7 @@ class HomeScreen extends StatelessWidget {
     ),
     _PageButtonPayload(
       title: AppStrings.fourthItemName,
-      route: MaterialPageRoute(builder: (context) => Container()),
+      route: AsyncRequestRoute(),
     ),
   ];
 
